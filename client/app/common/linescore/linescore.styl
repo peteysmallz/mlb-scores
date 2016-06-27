@@ -1,0 +1,50 @@
+table.linescore
+  width:270px
+  background: none
+  background-image: none
+  border: 0
+  border-collapse: collapse
+  border-spacing: 0
+  margin: 0
+  padding: 0
+  text-align: center
+  
+  thead
+    font-size: 12px
+    font-weight: 400
+    
+    tr
+      background: #e2e2e2
+        
+  tr
+    border-bottom: 1px solid #ccc;  
+      
+    td.total
+      border-right: 1px solid #ccc; 
+    
+    td.score    
+      &:last-child
+        border-left: 1px solid #ccc; 
+        
+    &:hover
+      background: #e8e8e8
+    
+  th
+  td
+    font-size: 12px
+    font-weight: 400
+    
+    &:first-child
+      text-align: left
+      padding-top: 6px
+      padding-left: 10px
+      
+  th
+    padding: 2px 0
+    border-bottom: $border
+    text-transform: uppercase
+    font-weight: bold
+    
+  img
+    width: 40px
+    display: inline-block

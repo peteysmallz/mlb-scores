@@ -1,0 +1,40 @@
+<md-table-container>
+  <table md-table>
+    <thead md-head>
+      <!-- when the user clicks this cell, the myOrder variable will get the value 'nameToLower' -->
+      <th md-column>Pitcher</th>
+      <th md-column></th>
+      <!-- the variable myOrder will not be changed when this cell is clicked -->
+      <th md-column md-numeric>W-L</th>
+    </thead>
+    <tbody md-body>
+      <!-- we can let ng-repeat sort the columns for us -->
+      <tr md-row ng-repeat="player in vm.rosterService.pitchers | limitTo : 4" ui-sref="player({playerId: player.player_id})">
+        <td md-cell><img class="head-shot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/{{player.player_id}}.jpg"> </td>
+        <td md-cell>{{player.name_display_init_last}}</td>
+        <td md-cell>{{player.w}} - {{player.l}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+<br>
+<br>
+<md-table-container>
+  <table md-table>
+    <thead md-head>
+      <!-- when the user clicks this cell, the myOrder variable will get the value 'nameToLower' -->
+      <th md-column>Batter</th>
+      <th md-column></th>
+      <!-- the variable myOrder will not be changed when this cell is clicked -->
+      <th md-column md-numeric>Avg</th>
+    </thead>
+    <tbody md-body>
+      <!-- we can let ng-repeat sort the columns for us -->
+      <tr md-row ng-repeat="player in vm.rosterService.hitters | limitTo : 4" ui-sref="player({playerId: player.player_id})">
+        <td md-cell><img class="head-shot" src="http://gdx.mlb.com/images/gameday/mugshots/mlb/{{player.player_id}}.jpg"> </td>
+        <td md-cell>{{player.name_display_init_last}}</td>
+        <td md-cell>{{player.avg}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>

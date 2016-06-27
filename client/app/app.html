@@ -1,4 +1,8 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="app">
-  <div ui-view></div>
+<div class="app" layout="row">
+  <section layout="column" flex>
+    <navbar></navbar>
+    <div ui-view style="overflow-y: auto; height: calc(100vh - 64px);"></div>
+  </section>
+  <sidedrawer layout="column" flex="nogrow"></sidedrawer>
 </div>

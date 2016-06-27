@@ -1,0 +1,161 @@
+{
+   "team_all_season":{
+      "copyRight":" Copyright 2016 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt  ",
+      "queryResults":{
+         "created":"2016-05-21T22:46:39",
+         "totalSize":"30",
+         "row":[
+            {
+               "name_display_full":"Arizona Diamondbacks",
+               "name_display_brief":"D-backs",
+               "team_id":"109"
+            },
+            {
+               "name_display_full":"Atlanta Braves",
+               "name_display_brief":"Braves",
+               "team_id":"144"
+            },
+            {
+               "name_display_full":"Baltimore Orioles",
+               "name_display_brief":"Orioles",
+               "team_id":"110"
+            },
+            {
+               "name_display_full":"Boston Red Sox",
+               "name_display_brief":"Red Sox",
+               "team_id":"111"
+            },
+            {
+               "name_display_full":"Chicago Cubs",
+               "name_display_brief":"Cubs",
+               "team_id":"112"
+            },
+            {
+               "name_display_full":"Chicago White Sox",
+               "name_display_brief":"White Sox",
+               "team_id":"145"
+            },
+            {
+               "name_display_full":"Cincinnati Reds",
+               "name_display_brief":"Reds",
+               "team_id":"113"
+            },
+            {
+               "name_display_full":"Cleveland Indians",
+               "name_display_brief":"Indians",
+               "team_id":"114"
+            },
+            {
+               "name_display_full":"Colorado Rockies",
+               "name_display_brief":"Rockies",
+               "team_id":"115"
+            },
+            {
+               "name_display_full":"Detroit Tigers",
+               "name_display_brief":"Tigers",
+               "team_id":"116"
+            },
+            {
+               "name_display_full":"Houston Astros",
+               "name_display_brief":"Astros",
+               "team_id":"117"
+            },
+            {
+               "name_display_full":"Kansas City Royals",
+               "name_display_brief":"Royals",
+               "team_id":"118"
+            },
+            {
+               "name_display_full":"Los Angeles Angels",
+               "name_display_brief":"Angels",
+               "team_id":"108"
+            },
+            {
+               "name_display_full":"Los Angeles Dodgers",
+               "name_display_brief":"Dodgers",
+               "team_id":"119"
+            },
+            {
+               "name_display_full":"Miami Marlins",
+               "name_display_brief":"Marlins",
+               "team_id":"146"
+            },
+            {
+               "name_display_full":"Milwaukee Brewers",
+               "name_display_brief":"Brewers",
+               "team_id":"158"
+            },
+            {
+               "name_display_full":"Minnesota Twins",
+               "name_display_brief":"Twins",
+               "team_id":"142"
+            },
+            {
+               "name_display_full":"New York Mets",
+               "name_display_brief":"Mets",
+               "team_id":"121"
+            },
+            {
+               "name_display_full":"New York Yankees",
+               "name_display_brief":"Yankees",
+               "team_id":"147"
+            },
+            {
+               "name_display_full":"Oakland Athletics",
+               "name_display_brief":"Athletics",
+               "team_id":"133"
+            },
+            {
+               "name_display_full":"Philadelphia Phillies",
+               "name_display_brief":"Phillies",
+               "team_id":"143"
+            },
+            {
+               "name_display_full":"Pittsburgh Pirates",
+               "name_display_brief":"Pirates",
+               "team_id":"134"
+            },
+            {
+               "name_display_full":"San Diego Padres",
+               "name_display_brief":"Padres",
+               "team_id":"135"
+            },
+            {
+               "name_display_full":"San Francisco Giants",
+               "name_display_brief":"Giants",
+               "team_id":"137"
+            },
+            {
+               "name_display_full":"Seattle Mariners",
+               "name_display_brief":"Mariners",
+               "team_id":"136"
+            },
+            {
+               "name_display_full":"St. Louis Cardinals",
+               "name_display_brief":"Cardinals",
+               "team_id":"138"
+            },
+            {
+               "name_display_full":"Tampa Bay Rays",
+               "name_display_brief":"Rays",
+               "team_id":"139"
+            },
+            {
+               "name_display_full":"Texas Rangers",
+               "name_display_brief":"Rangers",
+               "team_id":"140"
+            },
+            {
+               "name_display_full":"Toronto Blue Jays",
+               "name_display_brief":"Blue Jays",
+               "team_id":"141"
+            },
+            {
+               "name_display_full":"Washington Nationals",
+               "name_display_brief":"Nationals",
+               "team_id":"120"
+            }
+         ]
+      }
+   }
+}

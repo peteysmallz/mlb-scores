@@ -1,0 +1,191 @@
+<div ng-cloak>
+  <h2 ng-if="vm.liveGames.length > 0">Live</h2>
+  <md-content layout="row" layout-wrap>
+    <div flex-xs="100" flex-sm="50" flex-gt-sm="33" layout="column" ng-repeat="game in vm.liveGames">
+      <md-card>
+        <md-card-content class="scoreboard">
+            <section class="final-score">
+              <table class="scorecard">
+                <thead>
+                  <tr>
+                    <th class="live">{{game.status.inning_state}} {{game.status.inning}}</th>
+                    <th>R</th>
+                    <th>H</th>
+                    <th>E</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="away" ng-click="vm.rosterService.getHitter(game.away_team_id); vm.rosterService.getPitcher(game.away_team_id)">
+                    <td class="team">
+                      <div class="image-container">
+                        <img src="/static/images/mlb/{{game.away_team_id}}.svg">
+                      </div>
+                      <div class="team-meta">
+                        <span class="team-name"> {{game.away_team_name}}</span>
+                        <span class="record left">{{game.away_win}}-{{game.away_loss}}</span> 
+                      </div> 
+                    </td>
+                    <td class="total">{{game.linescore.r.away}}</td>
+                    <td class="score">{{game.linescore.h.away}}</td>
+                    <td class="score">{{game.linescore.e.away}}</td>
+                  </tr>
+                  <tr class="home" ng-click="vm.rosterService.getHitter(game.home_team_id); vm.rosterService.getPitcher(game.home_team_id)">
+                    <td class="team">
+                      <div class="image-container">
+                        <img src="/static/images/mlb/{{game.home_team_id}}.svg">
+                      </div>
+                      <div class="team-meta">
+                        <span class="team-name">{{game.home_team_name}}</span>
+                        <span class="record">{{game.home_win}}-{{game.home_loss}}</span>
+                      </div>
+                    </td>
+                    <td class="total">{{game.linescore.r.home}}</td>
+                    <td class="score">{{game.linescore.h.home}}</td>
+                    <td class="score">{{game.linescore.e.home}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+        </md-card-content>
+        <md-card-footer layout="row" layout-align="end center">
+
+          <!-- Live Notes -->
+          
+          <section class="live-notes" ng-if="game.batter">
+            <div class="on-base">
+              <div class="diamond third-base" ng-class="{'onBase': game.runners_on_base.runner_on_3b}"></div>
+              <div class="diamond second-base" ng-class="{'onBase': game.runners_on_base.runner_on_2b}"></div>
+              <div class="diamond first-base" ng-class="{'onBase': game.runners_on_base.runner_on_1b}"></div>
+            </div>
+
+            <div class="balls-strikes-container">
+              <div class="balls">
+                <div class="circle" ng-class="{'ball': game.status.b >= 1 }"></div>
+                <div class="circle" ng-class="{'ball': game.status.b >= 2 }"></div>
+                <div class="circle" ng-class="{'ball': game.status.b == 3}"></div>
+              </div>
+              <div class="strikes">
+                <div class="circle" ng-class="{'strike': game.status.s >= 1 }"></div>
+                <div class="circle" ng-class="{'strike': game.status.s == 2 }"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- /Live Notes -->
+        </md-card-footer>
+      </md-card>
+    </div>
+  </md-content>
+</div>
+
+<!-- Finished Games -->
+
+<div ng-cloak>
+  <h2 ng-if="vm.finishedGames.length > 0">Completed</h2>
+  <md-content layout="row" layout-wrap>
+    <div flex-xs="100" flex-sm="50" flex-gt-sm="33" layout="column" ng-repeat="game in vm.finishedGames">
+      <md-card>
+        <md-card-content class="scoreboard">
+          <section class="final-score">
+            <table class="scorecard">
+              <thead>
+                <tr>
+                  <th>{{game.status.status}}</th> 
+                  <th>R</th>
+                  <th>H</th>
+                  <th>E</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="away" ng-class="{light: (game.linescore.r.away | toNumber) < (game.linescore.r.home | toNumber)}" ng-click="vm.rosterService.getHitter(game.away_team_id); vm.rosterService.getPitcher(game.away_team_id)">
+                  <td class="team">
+                    <div class="image-container">
+                      <img src="/static/images/mlb/{{game.away_team_id}}.svg">
+                    </div>
+                    <div class="team-meta">
+                      <span class="team-name"> {{game.away_team_name}}</span>
+                      <span class="record left">{{game.away_win}}-{{game.away_loss}}</span> 
+                    </div> 
+                  </td>
+                  <td class="total">{{game.linescore.r.away}}</td>
+                  <td class="score">{{game.linescore.h.away}}</td>
+                  <td class="score" ng-class="{arrow: (game.linescore.r.away | toNumber) > (game.linescore.r.home | toNumber)}">{{game.linescore.e.away}}</td>
+                </tr>
+                <tr class="home" ng-class="{light: (game.linescore.r.home | toNumber) < (game.linescore.r.away | toNumber)}" ng-click="vm.rosterService.getHitter(game.home_team_id); vm.rosterService.getPitcher(game.home_team_id)">
+                  <td class="team">
+                    <div class="image-container">
+                      <img src="/static/images/mlb/{{game.home_team_id}}.svg">
+                    </div>
+                    <div class="team-meta">
+                      <span class="team-name">{{game.home_team_name}}</span>
+                      <span class="record">{{game.home_win}}-{{game.home_loss}}</span>
+                    </div>
+                  </td>
+                  <td class="total">{{game.linescore.r.home}}</td>
+                  <td class="score">{{game.linescore.h.home}}</td>
+                  <td class="score" ng-class="{arrow: (game.linescore.r.home | toNumber) > (game.linescore.r.away | toNumber)}">{{game.linescore.e.home}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-content>
+</div>
+
+<!-- Upcoming Games -->
+
+<div ng-cloak>
+  <h2 ng-if="vm.upcomingGames.length > 0">Upcoming</h2>
+  <md-content layout="row" layout-wrap>
+    <div flex-xs="100" flex-sm="50" flex-gt-sm="33" layout="column" ng-repeat="game in vm.upcomingGames">
+      <md-card>
+        <md-card-content class="scoreboard">
+          <section class="final-score">
+            <table class="scorecard">
+              <thead>
+                <tr>
+                  <th>{{game.time}} {{game.time_zone}}</th>
+                  <th colspan="3" ng-if="game.home_probable_pitcher"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="away" ng-click="vm.rosterService.getHitter(game.away_team_id); vm.rosterService.getPitcher(game.away_team_id)" ng-click="vm.rosterService.getHitter(game.away_team_id); vm.rosterService.getPitcher(game.away_team_id)">
+                  <td class="team">
+                    <div class="image-container">
+                      <img src="/static/images/mlb/{{game.away_team_id}}.svg">
+                    </div>
+                    <div class="team-meta">
+                      <span class="team-name"> {{game.away_team_name}}</span>
+                      <span class="record left">{{game.away_win}}-{{game.away_loss}}</span> 
+                    </div> 
+                  </td>
+                  <td colspan="4">
+                    <span class="probable-pitcher right">{{game.away_probable_pitcher.first}} {{game.away_probable_pitcher.last}}</span>
+                    <span class="record right">{{game.away_probable_pitcher.wins}}-{{game.away_probable_pitcher.losses}}, {{game.away_probable_pitcher.era}}
+                  </td>
+                </tr>
+                <tr class="home" ng-click="vm.rosterService.getHitter(game.home_team_id); vm.rosterService.getPitcher(game.home_team_id)">
+                  <td class="team">
+                    <div class="image-container">
+                      <img src="/static/images/mlb/{{game.home_team_id}}.svg">
+                    </div>
+                    <div class="team-meta">
+                      <span class="team-name">{{game.home_team_name}}</span>
+                      <span class="record">{{game.home_win}}-{{game.home_loss}}</span>
+                    </div>
+                  </td>
+                  <td colspan="4">
+                    <span class="probable-pitcher right">{{game.home_probable_pitcher.first}} {{game.home_probable_pitcher.last}}</span>
+                    <span class="record right">{{game.home_probable_pitcher.wins}}-{{game.home_probable_pitcher.losses}}, {{game.home_probable_pitcher.era}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </md-card-content>
+      </md-card>
+    </div>
+  </md-content>
+</div>

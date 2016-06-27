@@ -4,13 +4,22 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'sourcemap',
-  entry: {},
+  entry: {
+    vendors: ['angular-material/angular-material.css', 'angular-material-data-table/dist/md-data-table.min.css']
+  },
   module: {
-    loaders: [
-       { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
-       { test: /\.html$/, loader: 'raw' },
-       { test: /\.styl$/, loader: 'style!css!stylus' },
-       { test: /\.css$/, loader: 'style!css' }
+      loaders: [
+      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
+      { test: /\.html$/, loader: 'raw' },
+      { test: /\.styl$/, loader: 'style!css!stylus' },
+      { test: /\.css$/, loader: 'style!css' },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+      }
     ]
   },
   plugins: [
@@ -22,7 +31,10 @@ module.exports = {
       inject: 'body',
       hash: true
     }),
-
+    new webpack.ProvidePlugin({
+        d3: 'd3',
+        '_': 'lodash'
+    }),
     // Automatically move all modules defined outside of application directory to vendor bundle.
     // If you are using more complicated project structure, consider to specify common chunks manually.
     new webpack.optimize.CommonsChunkPlugin({

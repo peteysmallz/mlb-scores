@@ -1,0 +1,355 @@
+.material-spec-icon
+  color: #fff
+  
+md-toolbar:not(.md-menu-toolbar)
+  background-color: #666;
+  color: rgba(255,255,255,0.87);
+  
+// .full-width
+//   width: 100%
+
+// ESPN BASE
+
+.espn-menu
+  
+  * 
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+  div, span, h1, h2, h3, h4, h5, h6, p, a, dl, dt, dd, ol, ul, li
+    border: 0
+    font: inherit
+    font-size: 100%
+    margin: 0
+    padding: 0
+    vertical-align: baseline
+    
+  a
+    background: transparent
+    color: inherit
+    text-decoration: none
+  
+  // ESPN MENU
+
+  .header-wrapper
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 1000062
+    perspective: 800px
+    
+  .main-nav
+    position: relative
+    display: block
+    width: 100%
+    -webkit-transform-style: preserve-3d
+    transform-style: preserve-3d
+
+  .main-nav-container
+    background: #272727
+    position: relative
+    z-index: 1000044
+    
+    &:before
+    &:after
+      content: ''
+      display: table
+      
+    &:after
+      clear: both
+
+  .main-nav-mobile-trigger 
+    float: left
+    height: 50px
+    position: relative
+    width: 44px
+    z-index: 2
+    
+    &:before
+      margin-top: -7px
+    
+    &:after
+      background-color: #fff
+      border-radius: 3px
+      display: block
+      height: 3px
+      width: 24px
+      
+    .icon
+      color: black
+      font: 0/0 serif
+      text-shadow: none
+      background-color: #fff
+      border-radius: 3px
+      display: block
+      height: 3px
+      width: 24px 
+      margin: 0 auto
+      position: relative
+      top: 23px     
+
+      &:before
+      &:after
+        content: ''
+        position: absolute
+        background-color: #fff
+        border-radius: 3px
+        display: block
+        height: 3px
+        width: 24px
+        
+      &:before
+        margin-top: -7px
+        transform: rotate(0deg)
+        transition: margin-top .2s ease-out
+        transition-delay: 0.2s
+        
+      &:after
+        margin-top: 7px
+        transform: rotate(0deg)
+        transition: margin-top .2s ease-out
+        transition-delay: 0.2s
+        
+    // Active state
+        
+    &:hover
+      .icon
+        background: rgba(50,50,50,0)
+        &:before
+          margin-top: 0px
+          transform: rotate(45deg)
+          transition: all .2s ease-out
+          
+        &:after
+          margin-top: 0px
+          transform: rotate(-45deg)
+          transition: all .2s ease-out
+      
+  .main-nav-title
+    float: left
+    margin-right: 20px
+    position: relative
+    
+    &:before
+    &:after
+      transform: skew(-25deg, 0)
+      content: ''
+      display: block
+      height: 50px
+      position: absolute
+      top: 0
+
+    &:before
+      background: #584895
+      right: 0
+      width: 200px
+      
+    &:after
+      background: #B00000
+      left: -10px
+      z-index: -1
+      width: 130px
+      
+    .logo
+      background-position: 10px center
+      // background-image: url("http://a.espncdn.com/redesign/assets/img/logos/logo-espn-82x20@2x.png")
+      background-size: 82px 20px
+      background-repeat: no-repeat
+      color: #fff
+      font: 0/0 a
+      text-shadow: none
+      display: block
+      height: 50px
+      position: relative
+      width: 110px
+    
+  .main-nav-list
+    list-style-type: none
+    position: absolute
+    right: 0
+    
+  .main-nav-list-item
+    float: left
+    line-height: 50px
+    list-style-type: none
+    position: relative
+    text-align: center
+
+    a
+      display: block
+      font-size: 12px
+      line-height: 50px
+      text-transform: uppercase
+      color: #fff
+      font-size: 12px
+      height: 50px
+      padding: 0 20px
+      text-align: left
+      text-decoration: none
+      background: transparent
+      
+      &:after
+        color: #fff
+        font-size: 22px
+        left: 0
+        line-height: 50px
+        position: absolute
+        right: 0
+        text-align: center
+        top: 0
+          
+  // SUB MENU
+
+  .sub-nav
+    backface-visibility: hidden
+    transform-style: preserve-3d
+    display: block
+    background: #fff
+    border-radius: 1px
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.3)
+    font-size: 13px
+    overflow: visible
+    position: relative
+    z-index: 1000041
+    
+  .sub-nav-container
+    width: 100%
+    display: block
+    margin: 0 auto
+    position: relative
+      
+  .sub-nav-list
+    background: #fff
+    display: block
+    margin: 0
+    overflow: hidden
+    padding: 0
+    position: relative
+    vertical-align: top
+    white-space: nowrap
+    width: 100%
+    
+    &:after
+    &:before    
+      content: ''
+      display: table
+      
+    &:after
+      clear: both
+      
+  .sub-nav-list-item
+    clear: left
+    display: inline-block
+    float: none !important
+    line-height: 50px
+    text-transform: uppercase
+    width: 33%
+    position: relative
+    vertical-align: top
+    
+    a
+      display: block
+      color: #272727
+      font-size: 14px
+      line-height: 38px
+      position: relative
+      text-align: center
+      width: 100%
+      padding: 0 7px
+      white-space: nowrap
+
+    span
+      position: relative
+      &:hover
+        &:before
+          position: absolute
+          background-color: #c00
+          bottom: -12px
+          content: ''
+          height: 4px
+          left: -10px
+          
+          right: -10px
+          
+// Sub-nav Scroll
+
+  .sub-nav-scroll
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    -webkit-transform-style: preserve-3d
+    transform-style: preserve-3d
+    background: #fff
+    border-radius: 1px
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.3)
+    display: none
+    font-size: 13px
+    overflow: visible
+    position: relative
+    z-index: 1000041
+    display: block
+    
+  .sub-nav-scroll-container
+    height: 50px
+    overflow: hidden
+    width: 100%
+    -webkit-overflow-scrolling: touch
+    display: block
+    margin: 0 auto
+    position: relative
+  
+  ul.sub-nav-scroll-list
+    display: inline-block
+    margin: 0
+    padding: 0 10px;
+    position: relative
+    vertical-align: top
+    width: 100%
+    background-image: linear-gradient(to right,transparent 96%,transparent 97%,rgba(0,0,0,0.15) 100%)
+    background-color: transparent
+    overflow-x: auto
+    white-space: nowrap
+    width: 100%
+    
+    &:before
+    &:after
+      content: ''
+      display: table
+      
+    &:after
+      clear: both
+      
+    &::-webkit-scrollbar
+      display: none
+    
+  li.sub-nav-scroll-list-item
+    clear: left
+    display: inline-block
+    float: none !important
+    line-height: 50px
+    position: relative
+    vertical-align: top
+    
+    &:first-child
+      padding-right: 25px;
+      
+      a
+        padding-left: 0
+      
+      &:after
+        border-left: 1px solid #ccc;
+        content: '';
+        height: 25px;
+        margin-top: -13px;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+    
+    a.list-item
+      padding: 0 7px
+      display: block
+      font-size: 13px
+      font-weight: 400
+      line-height: 50px
+      position: relative
+      white-space: nowrap
